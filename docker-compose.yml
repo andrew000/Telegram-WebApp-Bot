@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  bot:
+    container_name: bot
+
+    build:
+      context: ./bot
+      dockerfile: Dockerfile
+
+    stop_signal: SIGINT
+
+    networks:
+      - test_network
+
+    ports:
+      - "45678:45678"
+
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - ENDPOINT=${ENDPOINT}
+
+    restart: "on-failure"
+
+    entrypoint: [ "python3", "main.py" ]
+
+networks:
+  test_network:
