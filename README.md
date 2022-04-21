@@ -12,7 +12,7 @@
 ***
 
 # Problems
-### WebApp doesn't work in web.telegram.org
+## WebApp doesn't work in web.telegram.org
 :tipping_hand_man: If you use **WebApp** through the **web.telegram.org**, then **Nginx** will be very reluctant to give statics (**WILL NOT**).
 
 :monocle_face: This is caused by the iframe security policy, which needs to be slightly adjusted in the **Nginx** settings.
@@ -24,3 +24,8 @@
 :sunglasses: As a result, **Nginx** will be happy to share static files with users of the **web.telegram.org**
 
 ![image](https://user-images.githubusercontent.com/11490628/164559948-5f52f36c-07d5-4b99-a0d0-b2af6621ae4d.png)
+
+## White Screen in TDesktop
+:tipping_hand_man: **TDesktop** on a **PC** does not know how to use **TLS 1.3**, so be sure to specify the ability to use **TLS 1.2** in the **Nginx** config.
+
+**P.S.** :confused: _Now it seems too early for **TLS 1.3**_
